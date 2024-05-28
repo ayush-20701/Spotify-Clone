@@ -1,0 +1,21 @@
+.iconSizeBox1Left svg{
+    width: 1.9vw;
+}
+.colorWhite{
+    color: white;
+}
+.flex{
+    display: flex;
+}
+.phone{
+    display: none;
+}
+.invert{
+    filter: invert(1);
+}
+#cardImg .roundedImg{
+    border-radius: 50%;
+}
+.row .cardHeight{
+    height: 14rem;
+}
