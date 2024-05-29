@@ -15,7 +15,7 @@ let currLi
 async function getSongs(folder, subFolder, play) {
     currFolder = folder
     currSubFolder =subFolder
-    let data = await fetch(`songs/${folder}/${subFolder}/`)
+    let data = await fetch(`Songs/${folder}/${subFolder}/`)
     let response = await data.text()
     let div = document.createElement('div')
     div.innerHTML = response
@@ -61,7 +61,7 @@ async function getSongs(folder, subFolder, play) {
 }
 async function main() {
 
-    let mainData = await fetch('songs/')
+    let mainData = await fetch('Songs/')
     let response = await mainData.text()
     // console.log(response);
     let div = document.createElement('div')
@@ -76,7 +76,7 @@ async function main() {
         // console.log(f);
         let heading = (f.innerText.split('/')[0]);
         // console.log(heading);
-        let fData = await fetch(`songs${f.href.split('Songs')[1]}`)
+        let fData = await fetch(`Songs${f.href.split('Songs')[1]}`)
         let fContent = await fData.text()
         let rows = document.createElement('div')
         rows.innerHTML = fContent
@@ -130,7 +130,7 @@ async function main() {
                     // console.log(desc);
                 }
                 else{
-                    let card = await fetch(`songs${sf.href.split('Songs')[1]}`)
+                    let card = await fetch(`Songs${sf.href.split('Songs')[1]}`)
                     let cardData = await card.text()
                     // console.log(cardData);
                     let cardDiv = document.createElement('div')
@@ -141,7 +141,7 @@ async function main() {
                     let cardAsArr = Array.from(cardAs)
                     cardAsArr.shift()
                     // console.log(cardAsArr);
-                    let data = await fetch(`songs${cardAsArr[0].href.split('Songs')[1]}`)
+                    let data = await fetch(`Songs${cardAsArr[0].href.split('Songs')[1]}`)
                     let response = await data.text()
                     // console.log(response);
                     let currentCard = document.getElementsByClassName(`${cardClass}`)
