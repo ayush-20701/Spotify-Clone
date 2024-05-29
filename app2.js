@@ -73,9 +73,9 @@ async function main() {
     //Populating the songCards div with rows
     let songCards = document.querySelector('#songCards')
     Array.from(folders).forEach(async f => {  //for each folder (row groups)
-        // console.log(f);
+        // console.log(f.href.split('Songs')[1]);
         let heading = (f.innerText.split('/')[0]);
-        // console.log(heading);
+        // console.log(f.innerText.replaceAll(" ", "%20"));
         let fData = await fetch(`Songs${f.href.split('Songs')[1]}`)
         let fContent = await fData.text()
         let rows = document.createElement('div')
@@ -130,6 +130,7 @@ async function main() {
                     // console.log(desc);
                 }
                 else{
+                    // console.log(sf.href.split('Songs')[1]);
                     let card = await fetch(`Songs${sf.href.split('Songs')[1]}`)
                     let cardData = await card.text()
                     // console.log(cardData);
@@ -140,7 +141,7 @@ async function main() {
                     // console.log(cardAs);
                     let cardAsArr = Array.from(cardAs)
                     cardAsArr.shift()
-                    // console.log(cardAsArr);
+                    console.log(cardAsArr[0].href.split('Songs')[1]);
                     let data = await fetch(`Songs${cardAsArr[0].href.split('Songs')[1]}`)
                     let response = await data.text()
                     // console.log(response);
